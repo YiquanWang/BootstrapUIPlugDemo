@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap Template - Modal</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" >
+      <h3>Modal 弹出层的使用方法</h3>
+
+
+      <!-- 触发弹出层的按钮 -->
+      <!-- href：此元素标明要打开的弹出层Id
+      data-toggle="modal" ：表明这个按钮是控制弹出层的功能 -->
+      <a href="#myModal" role="button" class="btn" data-toggle="modal">查看演示案例</a>
+
+      <!-- 弹出层的实体内容 -->
+      <!-- aria-labelledby：用于无障碍读屏软件读屏使用，其值为需要朗读的标签的Id -->
+      <!-- 使用时只需替换相应内容的ID，和文本内容即可使用 -->
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" 
+            aria-labelledby="myModalLabel" aria-hidden="true" >
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">弹出框的标题</h3>
+        </div>
+        <div class="modal-body">
+          <p>弹出框的主要内容…</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+          <button class="btn btn-primary">保存</button>
+        </div>
+      </div>    
+    </div>
+    <!-- 如需在弹出层中某处需要添加一个关闭弹出层的元素，只需在需要触发关闭事件的元素上加上 data-dismiss="modal" 即可。 -->
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://v2.bootcss.com/javascript.html#modals" target="_blank">官方中文介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $("#myModal").modal({
+          keyboard:true, //bool值。 默认值是true，表示是否允许键盘按esc关闭弹出层
+          backdrop:true,//bool值。 默认值是true，表示是否添加背景遮罩层
+          show:false,//bool值。 默认值是true，表示是否初始化弹出层时就自动打开弹出层
+          remote:'http://www.baidu.com'//默认值是true，表示是否初始化弹出层时就自动打开弹出层
+        })
+
+        //事件的使用方法
+        $('#myModal').on('show', function () {
+          alert("弹出层正在打开");
+        })
+
+        $('#myModal').on('shown', function () {
+          alert("弹出层已经打开");
+        })
+
+        $('#myModal').on('hide', function () {
+          alert("弹出层正在关闭");
+        })
+
+        $('#myModal').on('hidden', function () {
+          alert("弹出层已经关闭");
+        })
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap Template - Tips</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="container" >
+      <h3>Tips 的使用方法</h3>
+
+
+
+      <form class="bs-docs-example form-horizontal">
+        <p class="muted" style="margin-bottom: 0;">          
+          <a href="#" data-toggle="tooltip" data-original-title="Bootstrap Tips">这个功能</a>即可用于文本中，也可以用于表单中。            
+        </p>
+        <div class="control-group">
+          <label class="control-label" for="inputEmail" >邮箱</label>
+          <div class="controls">
+            <!-- data-original-title：是tips中所需要显示的内容 -->
+            <!-- data-trigger：是触发弹出提示的事件，它分为 click | hover | focus | manual 四种方式触发，默认是hover -->
+            <!-- data-placement：是tips的显示位置，它分为 top | bottom | left | right 四个方位来显示，默认是top -->
+            <input type="text" id="inputEmail" placeholder="邮箱" data-toggle="tooltip" 
+            data-original-title="请输入您的邮箱地址." 
+            data-trigger="focus"
+            data-placement="right">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputPassword">密码</label>
+          <div class="controls">
+            <input type="password" id="inputPassword" placeholder="密码">
+          </div>
+        </div>
+        <div class="control-group">
+          <div class="controls">
+            <label class="checkbox">
+              <input type="checkbox"> 记住我
+            </label>
+            <button type="submit" class="btn">登录</button>
+          </div>
+        </div>
+      </form>
+      <table class="table table-bordered table-striped">
+        <thead>
+         <tr>
+           <th style="width: 100px;">名称</th>
+           <th style="width: 100px;">类型</th>
+           <th style="width: 50px;">默认值</th>
+           <th>描述</th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+           <td>animation</td>
+           <td>boolean</td>
+           <td>true</td>
+           <td>在显示和隐藏 tooltip 时，是否使用动画过渡效果 </td>
+         </tr>
+         <tr>
+           <td>html</td>
+           <td>boolean</td>
+           <td>false</td>
+           <td>在提示框内是是否以<code>html</code>形式注入数据。如果值为 false, 将会以 <code>text</code> 的形式将内容注入数据，使用<code>text</code>方式可以有效的防止XSS攻击。</td>
+         </tr>
+         <tr>
+           <td>placement</td>
+           <td>string | function</td>
+           <td>'top'</td>
+           <td>tooltip 的显示方位 - top | bottom | left | right</td>
+         </tr>
+         <tr>
+           <td>selector</td>
+           <td>string</td>
+           <td>false</td>
+           <td>如果提供了selector，将对符合条件的某个或多个元素启用工具提示。</td>
+         </tr>
+         <tr>
+           <td>title</td>
+           <td>string | function</td>
+           <td>''</td>
+           <td>当 `title` 属性未设定时所显示的默认值</td>
+         </tr>
+         <tr>
+           <td>trigger</td>
+           <td>string</td>
+           <td>'hover focus'</td>
+           <td>tooltip 的触发方式- click | hover | focus | manual. Note you case pass trigger mutliple, space seperated, trigger types.</td>
+         </tr>
+         <tr>
+           <td>delay</td>
+           <td>number | object</td>
+           <td>0</td>
+           <td>
+            <p>延迟显示和隐藏 tooltip (ms) - 不支持以manual为触发方式的 tooltip</p>
+            <p>如果只设定一个数值, 延迟将同时定义给 show/hide</p>
+            <p>用对象的定义方法如: <code>delay: { show: 500, hide: 100 }</code></p>
+           </td>
+         </tr>
+         <tr>
+           <td>container</td>
+           <td>string | false</td>
+           <td>false</td>
+           <td>
+            <p>将 tooltip 添加到一个特定的容器中，定义方法如 <code>container: 'body'</code></p>
+           </td>
+         </tr>
+        </tbody>
+      </table>
+    </div> 
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://v2.bootcss.com/javascript.html#tooltips" target="_blank">官方中文介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        //统一初始化页面上的所有tooltip，通用设置可在初始化时把参数也初始化进去，单独特例可在标签中以data的形式进行设置
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    </script>
+</body>
+</html>

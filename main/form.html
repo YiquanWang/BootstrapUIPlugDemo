@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap Template - Tips</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="container" >
+      <h3>Form 的搭建结构</h3>
+
+
+
+
+      <form class="form-horizontal">
+        <div class="control-group">
+          <label class="control-label" for="inputEmail" >邮箱</label>
+          <div class="controls">
+            <input type="text" id="inputEmail" name="email" placeholder="邮箱" /><span class="help-block">请输入正确邮箱，以便通过验证。</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="inputPassword">密码</label>
+          <div class="controls">
+            <input type="password" id="inputPassword" name="psw" placeholder="密码"><span class="help-inline">至少6位字符。</span>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="selectGender">性别</label>
+          <div class="controls">
+            <select  id="selectGender" name="gender" >
+              <option value="0">男</option>
+              <option value="1">女</option>
+            </select>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="ckbType">类别</label>
+          <div class="controls">
+            <label id="ckbType" class="radio inline">
+              <input type="radio" name="type" value="0"> 学生
+            </label>
+            <label id="ckbType" class="radio inline">
+              <input type="radio" name="type" value="1"> 教师
+            </label>
+          </div>
+        </div>
+        <div class="form-actions">        
+            <button type="submit"  class="btn btn-primary" >登录</button>
+        </div>
+      </form>
+    </div> 
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://v2.bootcss.com/base-css.html#forms" target="_blank">官方中文介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+      });
+    </script>
+</body>
+</html>

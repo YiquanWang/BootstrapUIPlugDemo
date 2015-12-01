@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap Template - Tabs</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px"  class="container">
+      <h3>Tabs 的使用方法</h3>
+
+      <!-- 这里是tab标签定义的地方，新增标签只需要新增内容中的li。 -->
+      <!-- 这里面的a标签href属性表明的是和这个tab标签关联的内容部分的ID -->
+      <ul class="nav nav-tabs" id="myTab">
+        <li class="active"><a href="#tab1">Tab 1</a></li>
+        <li><a href="#tab2" data-toggle="tab">Tab 2</a></li>
+        <li><a href="#tab3" data-toggle="tab">Tab 3</a></li>
+        <li><a href="#tab4" data-toggle="tab">Tab 4</a></li>
+      </ul>       
+      <div class="tab-content">
+        <div class="tab-pane active" id="tab1">
+          <p> 这里面的内容是 Tab1 内所包含的内容
+        </div>
+        <div class="tab-pane" id="tab2">
+          <p> Tab2 的内容在这里
+        </div>
+        <div class="tab-pane" id="tab3">
+          <p> Here is the Tab3`s content
+        </div>
+        <div class="tab-pane" id="tab4">
+          <p> 你看到的内容是 Tab4 里面的内容
+        </div>
+      </div>       
+    </div>  
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://v2.bootcss.com/javascript.html#tabs" target="_blank">官方中文介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // Tabs插件事件的使用方法
+
+        $('#myTab a[data-toggle="tab"]').on('show', function (e) {
+          e.target;// 当前选中的 tab 路径
+          e.relatedTarget; // 上一个选中的 tab 路径
+          alert('tab正在被打开');
+        })
+        $('#myTab a[data-toggle="tab"]').on('shown', function (e) {
+          e.target;// 当前选中的 tab 路径
+          e.relatedTarget; // 上一个选中的 tab 路径
+          alert('tab已经被打开');
+        })
+      });
+    </script>
+</body>
+</html>

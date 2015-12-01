@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Plugin Template - QRCode</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="container" >
+      <h3>QRCode 的生成方法</h3>
+
+      <p>Table 生成方法：</p>
+      <div id="qrcodeTable"></div>
+
+
+      <p>HTML5 Canvas 生成：</p>
+      <div id="qrcodeCanvas"></div>
+
+    <blockquote role="remark" style="margin:10px">
+      <p>使用js创建优点：代码结构明了易于维护，可以对内容进行逻辑处理</p>
+      <p>使用url创建优点：无需引用js文件，对于简短内容创建便捷</p>
+    </blockquote>
+
+    <blockquote role="remark" style="margin:10px">
+      <p>
+        详细使用方法请查看源码。 
+        <a href="https://github.com/jeromeetienne/jquery-qrcode" target="_blank">官方介绍</a> |
+      </p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../resource/js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#qrcodeTable').qrcode({
+          width: 150, //宽度
+          height:150, //高度
+          render  : "table",
+          text  : "hello world"
+        }); 
+        $('#qrcodeCanvas').qrcode({
+          width: 150, //宽度
+          height:150, //高度
+          text  : "hello world"
+        });
+      });
+    </script>
+</body>
+</html>

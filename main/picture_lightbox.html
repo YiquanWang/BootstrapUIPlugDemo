@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap Template - Picture Lightbox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../resource/fancyBox/css/jquery.fancybox.all.css?v=2.1.5" media="screen" />
+
+
+   
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px"  class="container">
+      <h3>Picture Lightbox 的使用方法</h3>
+      <!-- 图片幻灯片展示 -->
+      <h3>简单的图片展示</h3>
+  <p>
+    <a class="fancybox" href="../resource/img/1_b.jpg" data-fancybox-group="gallery" title="Lorem ipsum dolor sit amet"><img src="../resource/img/1_s.jpg" alt="" /></a>
+
+    <a class="fancybox" href="../resource/img/2_b.jpg" data-fancybox-group="gallery" title="Etiam quis mi eu elit temp"><img src="../resource/img/2_s.jpg" alt="" /></a>
+
+    <a class="fancybox" href="../resource/img/3_b.jpg" data-fancybox-group="gallery" title="Cras neque mi, semper leon"><img src="../resource/img/3_s.jpg" alt="" /></a>
+
+    <a class="fancybox" href="../resource/img/4_b.jpg" data-fancybox-group="gallery" title="Sed vel sapien vel sem uno"><img src="../resource/img/4_s.jpg" alt="" /></a>
+  </p>
+
+  <h3>不同的效果</h3>
+  <p>
+    <a class="fancybox-effects-a" href="../resource/img/5_b.jpg" title="图片标题在外面"><img src="../resource/img/5_s.jpg" alt="" /></a>
+
+    <a class="fancybox-effects-b" href="../resource/img/5_b.jpg" title="图片标题在里面"><img src="../resource/img/5_s.jpg" alt="" /></a>
+
+    <a class="fancybox-effects-c" href="../resource/img/5_b.jpg" title="自定义样式"><img src="../resource/img/5_s.jpg" alt="" /></a>
+
+    <a class="fancybox-effects-d" href="../resource/img/5_b.jpg" title="图片放大展示效果"><img src="../resource/img/5_s.jpg" alt="" /></a>
+  </p>
+
+  <h3>不同的加载内容方式</h3>
+  <p>
+    fancyBox will try to guess content type from href attribute but you can specify it directly by adding classname (fancybox.image, fancybox.iframe, etc).
+  </p>
+  <ul>
+    <li><a class="fancybox" href="#inline1" title="Lorem ipsum dolor sit amet">加载页面内的内容到弹出层中</a></li>
+    <li><a class="fancybox fancybox.ajax" href="ajax.txt">Ajax获取数据加载到弹出层中</a></li>
+    <li><a class="fancybox fancybox.iframe" href="http://www.168zght.com">以Iframe的形式加载一个网页到弹出层中</a></li>
+    <li><a class="fancybox" href="http://player.youku.com/player.php/sid/XNjg0NjI3NjI0/v.swf">加载Swf文件到弹出层中</a></li>
+  </ul>
+
+  <div id="inline1" style="width:400px;display: none;">
+    <h3>自定义的内容标题</h3>
+    <p>
+      我是内容主体。我是内容主体。我是内容主体。
+    </p>
+  </div>
+
+  <p>
+    Ajax 请求的方式得在服务器端才有效果，本地打开无法展示
+  </p>
+
+  <h3>带有帮助按钮的图片展示效果</h3>
+  <p>
+    <a class="fancybox-buttons" data-fancybox-group="button" href="../resource/img/1_b.jpg"><img src="../resource/img/1_s.jpg" alt="" /></a>
+
+    <a class="fancybox-buttons" data-fancybox-group="button" href="../resource/img/2_b.jpg"><img src="../resource/img/2_s.jpg" alt="" /></a>
+
+    <a class="fancybox-buttons" data-fancybox-group="button" href="../resource/img/3_b.jpg"><img src="../resource/img/3_s.jpg" alt="" /></a>
+
+    <a class="fancybox-buttons" data-fancybox-group="button" href="../resource/img/4_b.jpg"><img src="../resource/img/4_s.jpg" alt="" /></a>
+  </p>
+
+  <h3>有缩略图的展示效果</h3>
+  <p>
+    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="../resource/img/4_b.jpg"><img src="../resource/img/4_s.jpg" alt="" /></a>
+
+    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="../resource/img/3_b.jpg"><img src="../resource/img/3_s.jpg" alt="" /></a>
+
+    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="../resource/img/2_b.jpg"><img src="../resource/img/2_s.jpg" alt="" /></a>
+
+    <a class="fancybox-thumbs" data-fancybox-group="thumb" href="../resource/img/1_b.jpg"><img src="../resource/img/1_s.jpg" alt="" /></a>
+  </p>
+
+  <h3>手动打开</h3>
+  <ul>
+    <li><a id="fancybox-manual-a" href="javascript:;">打开单个文件</a></li>
+    <li><a id="fancybox-manual-b" href="javascript:;">打开单个文件，自定义属性</a></li>
+    <li><a id="fancybox-manual-c" href="javascript:;">打开图片组展示</a></li>
+  </ul>
+
+
+    </div>  
+  
+    
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://www.fancyapps.com/fancybox/#docs" target="_blank">官方介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="../resource/fancyBox/js/jquery.mousewheel-3.0.6.pack.js"></script>
+    <script type="text/javascript" src="../resource/fancyBox/js/jquery.fancybox.all.min.js?v=2.1.5"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+      /*
+       *  Simple image gallery. Uses default settings
+       */
+
+      $('.fancybox').fancybox();
+
+      /*
+       *  Different effects
+       */
+
+      // Change title type, overlay closing speed
+      $(".fancybox-effects-a").fancybox({
+        helpers: {
+
+          overlay : {
+            closeClick : false, // 是否允许点击遮罩层关闭弹出层
+            speedOut   : 200,   // 关闭弹出层时遮罩层隐去动画效果时长(ms)
+            showEarly  : true,  // 是否立即打开弹出层。如果为false则等待内容加载完毕后再打开弹出层
+            css        : {},    // 自定义CSS属性
+            locked     : true   // 弹出层弹出后是否禁止背景内容还能滚动
+          },
+          title : {
+            type : 'outside'    // 'float', 'inside', 'outside' or 'over'
+          }
+        }
+      });
+
+      // Disable opening and closing animations, change title type
+      $(".fancybox-effects-b").fancybox({
+        openEffect  : 'none',   // 打开时动画效果 'elastic', 'fade' or 'none'
+        closeEffect : 'none',   // 关闭时动画效果 'elastic', 'fade' or 'none'
+
+        helpers : {
+          title : {
+            type : 'over'
+          }
+        }
+      });
+
+      // Set custom style, close if clicked, change title type and overlay color
+      $(".fancybox-effects-c").fancybox({
+        wrapCSS    : 'fancybox-custom',  //用于包装元素可定制的CSS类（用于自定义的样式）
+        closeClick : true,               //在用户点击内容时是否关闭遮罩层
+
+        openEffect : 'none',
+
+        helpers : {
+          title : {
+            type : 'inside'
+          },
+          overlay : {
+            css : {
+              'background' : 'rgba(238,238,238,0.85)'
+            }
+          }
+        }
+      });
+
+      // Remove padding, set opening and closing animations, close if clicked and disable overlay
+      $(".fancybox-effects-d").fancybox({
+        padding: 0,                   //弹出层容器内间距设定
+
+        openEffect : 'elastic',
+        openSpeed  : 150,             //打开时动画效果时长(ms)
+
+        closeEffect : 'elastic',
+        closeSpeed  : 150,            //关闭时动画效果时长(ms)
+
+        closeClick : true,
+
+        helpers : {
+          overlay : null              //将其设为null则表示不需要遮罩层
+        }
+      });
+
+      /*
+       *  Button helper. Disable animations, hide close button, change title type and content
+       */
+
+      $('.fancybox-buttons').fancybox({
+        openEffect  : 'none',   // 打开时动画效果 'elastic', 'fade' or 'none'
+        closeEffect : 'none',   // 打开时动画效果 'elastic', 'fade' or 'none'
+
+        prevEffect : 'none',    // 上一张时动画效果 'elastic', 'fade' or 'none'
+        nextEffect : 'none',    // 下一张时动画效果 'elastic', 'fade' or 'none'
+
+        closeBtn  : false,      // 是否显示关闭按钮
+
+        helpers : {
+          title : {
+            type : 'inside'
+          },
+          buttons : {}
+        },
+
+        afterLoad : function() { //加载成功后的回调函数
+          this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+        }
+      });
+
+
+      /*
+       *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+       */
+
+      $('.fancybox-thumbs').fancybox({
+        prevEffect : 'none',
+        nextEffect : 'none',
+
+        closeBtn  : false,
+        arrows    : false,    //是否显示翻页箭头
+        nextClick : true,     //是否点击内容时自动显示下一张
+
+        helpers : {
+          thumbs : {          //当thumbs值不为null时则显示缩略图
+            width  : 50,
+            height : 50
+          }
+        }
+      });
+
+  
+      /*
+       *  Open manually
+       */
+
+      $("#fancybox-manual-a").click(function() {
+        //手动打开单张图片
+        $.fancybox.open('../resource/img/1_b.jpg');
+      });
+
+      $("#fancybox-manual-b").click(function() {
+        //手动打开单个弹出层，并可以指定类型
+        $.fancybox.open({
+          href : 'http://www.baidu.com',
+          type : 'iframe',
+          padding : 5
+        });
+      });
+
+      $("#fancybox-manual-c").click(function() {
+        //手动打开多个文件，并可以设置属性
+        $.fancybox.open([
+          {
+            href : '../resource/img/1_b.jpg',
+            title : 'My title'
+          }, {
+            href : '../resource/img/2_b.jpg',
+            title : '2nd title'
+          }, {
+            href : '../resource/img/3_b.jpg'
+          }
+        ], {
+          helpers : {
+            thumbs : {
+              width: 75,
+              height: 50
+            }
+          }
+        });
+      });
+
+
+    });
+  </script>
+</body>
+</html>

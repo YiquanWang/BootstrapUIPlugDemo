@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadWeb", "FileUploadWeb\FileUploadWeb.csproj", "{F9292555-4696-424B-BC38-A380AA93E8BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileUploadMVC", "FileUploadMVC\FileUploadMVC.csproj", "{F794A993-FC4B-427D-B1A1-956AB0BFC3A4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9292555-4696-424B-BC38-A380AA93E8BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9292555-4696-424B-BC38-A380AA93E8BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9292555-4696-424B-BC38-A380AA93E8BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9292555-4696-424B-BC38-A380AA93E8BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F794A993-FC4B-427D-B1A1-956AB0BFC3A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F794A993-FC4B-427D-B1A1-956AB0BFC3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F794A993-FC4B-427D-B1A1-956AB0BFC3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F794A993-FC4B-427D-B1A1-956AB0BFC3A4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

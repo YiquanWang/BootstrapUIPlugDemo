@@ -1,0 +1,54 @@
+footer {
+    color: #999999;
+    margin: 10px 0 0;
+    padding: 40px 10px 0;
+    background: #f5f5f5;
+    border-top: #e5e5e5 1px solid;
+}
+
+footer h3 {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    padding: 0 0 10px 0;
+    border-bottom: #e5e5e5 1px solid;
+    text-shadow: 1px 1px 0 #f0f0f0;
+}
+
+.copy {
+    font-size: 13px;
+    text-shadow: 1px 1px 0 #f0f0f0;
+    padding: 20px 0 10px 0;
+    color: #7d7d7d;
+}
+
+.carousel img {
+    width: 100%;
+}
+
+.marketing-img {
+    display: block;
+    margin: 0 auto 30px;
+    max-height: 145px;
+}
+
+#scrollUp {
+    bottom: 20px;
+    right: 20px;
+    height: 38px;
+    width: 38px;
+    background: url("../img/top.png") no-repeat;
+}
+
+.media-body {
+    font-size: 11px;
+}
+
+.text-overflow {
+    display: block; /*内联对象需加*/
+    width: 70%;
+    word-break: keep-all; /* 不换行 */
+    white-space: nowrap; /* 不换行 */
+    overflow: hidden; /* 内容超出宽度时隐藏超出部分的内容 */
+    text-overflow: ellipsis; /* 当对象内文本溢出时显示省略标记(...) ；需与overflow:hidden;一起使用。*/
+}
+

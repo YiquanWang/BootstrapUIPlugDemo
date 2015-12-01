@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Scripts/uploadify/uploadify.css" rel="stylesheet" type="text/css" />
+    <link href="Scripts/flexpaper/css/flexpaper.css" rel="stylesheet" type="text/css" media="screen" />
+    <style type="text/css">
+        .custom_forms_popup
+        {
+            border-collapse: collapse;
+            clear: both;
+            font-size: 12px;
+            font-weight: normal;
+            margin: 20px auto;
+            vertical-align: middle;
+            width: 850px;
+            word-break: break-all;
+            color: #333333;
+            border: none;
+            border-top: 1px #dfdfdf dotted;
+        }
+        
+        .custom_forms_popup td
+        {
+            border: none;
+            vertical-align: middle;
+            padding: 5px;
+            border-bottom: 1px #dfdfdf dotted;
+            height: 25px;
+        }
+        
+        .custom_forms_popup th
+        {
+            background: #f6f6f6;
+            border: none;
+            vertical-align: middle;
+            text-align: center;
+            padding: 5px;
+            border-bottom: 1px #dfdfdf dotted;
+            height: 25px;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" id="ff" action="host/form/handle/path">
+    <table class="custom_forms_popup">
+        <tr>
+            <th>
+                文件上传
+            </th>
+            <td>
+                <input type="file" name="uploadify" id="uploadify" style="display: none" />
+            </td>
+        </tr>
+        <tr>
+            <th>
+                文件列表
+            </th>
+            <td>
+                <div id="file-box">
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                PDF预览
+            </th>
+            <td>
+                <div id="documentViewer" class="flexpaper_viewer" style="width:770px;height:500px"></div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="button" id="btnUp" value="上传" onclick="$('#uploadify').uploadify('upload', '*');" />
+                <input type="button" id="btnReset" value="重置" onclick="$('#uploadify').uploadify('cancel', '*');" />
+            </td>
+        </tr>
+    </table>
+    </form>
+    <script src="Scripts/jquery-1.8.0.min.js" type="text/javascript"></script>
+    <!--上传插件-->
+    <script src="Scripts/uploadify/swfobject.js" type="text/javascript"></script>
+    <script src="Scripts/uploadify/jquery.uploadify.min.js" type="text/javascript"></script>
+    <!--pdf在线浏览插件-->
+    <script src="Scripts/flexpaper/js/flexpaper.js"></script>
+    <script src="Scripts/flexpaper/js/flexpaper_handlers.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#uploadify").uploadify({
+                'auto': true,
+                'swf': '/Scripts/uploadify/uploadify.swf',
+                'uploader': '/UploadPdf.ashx?action=test',
+                'buttonText': '上传文件',
+                'fileSizeLimit': '10MB',
+                'fileTypeDesc': 'Image Files',
+                'fileTypeExts': '*.pdf',
+                'onSelect': function (file) {
+                    //多文件上传时建议使用此方法进行控制上传文件数
+                    if ($("#file-box").children().length >= 1) {
+                        alert("最多只允许上传 4 个文件。");
+                        $("#uploadify").uploadify('cancel', file.id);
+                    }
+                },
+                'onUploadSuccess': function (file, data, response) {
+                    if (response) {
+                        var result = eval('(' + data + ')');
+                        //demo中为了显示上传的pdf文件，实际项目中可以删除此段代码
+                        $('#documentViewer').FlexPaperViewer({
+                            config: {
+                                SWFFile: result.filePath + '.swf',
+                                jsDirectory: '/Scripts/flexpaper/js/',
+                                localeChain: 'zh_CN'
+                            }
+                        });
+                        
+                        //将上传文件放入文件列表
+                        var html = generateFileItem(result.fileName, result.filePath);
+                        $("#file-box").prepend(html);
+                    }
+                }
+            });
+        });
+
+        //生成上传文件链接子项
+        //在提交表单时，上传文件信息会以数组（FileInfo['filename1|path1','filename2|path2']）的形式提交表单
+        function generateFileItem(name, path) {
+            var boxHeader = "<div style='margin:5px 0;'>";
+            var link = "<a href='" + path + "'>" + name + "</a>";
+            var close = "<span style='margin-left:10px;cursor:pointer;' onclick='deletefile(this)'>&times;</span>";
+            var hidden = "<input type='hidden' name='FileInfo' value='" + name + "|" + path + "' />";
+            var boxFooter = "</div>";
+
+            return boxHeader + link + close + hidden + boxFooter;
+        }
+
+        //删除文件
+        function deletefile(obj) {
+            //此删除未真正删除系统中上传的文件，只是将文件在数据库中的记录进行删除
+            $(obj).parent().remove();
+        }
+    </script>
+</body>
+</html>

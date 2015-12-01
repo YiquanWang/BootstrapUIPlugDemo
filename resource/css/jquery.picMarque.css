@@ -1,0 +1,61 @@
+/*
+picMarque v1.0.0
+Author: Spring Wang 
+Git: https://github.com/YiquanWang/jquery.picMarque
+
+Copyright 2014 Spring Wang
+Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
+
+*/
+
+.marque-box {
+    overflow: hidden;
+    margin: 0 auto;
+    height:192px;
+}
+
+.marque-box .marque-main {
+    width: 1170px;
+    float: left;
+}
+
+.marque-box .marque-main ul {
+    padding: 15px 0 0;
+    margin: 0;
+}
+
+.marque-box .marque-main ul li {
+    float: left;
+    margin: 0 34px 0 0 ;
+    _display: inline;
+    padding: 0;
+    list-style: none outside none;
+}
+
+.marque-box .marque-main ul li a {
+    display: block;
+    width: 190px;
+    height: 130px;
+    padding: 4px;
+    border: 1px solid #e5e5e5;
+}
+
+.marque-box .marque-main ul li a img {
+    width: 190px;
+    height: 130px;
+}
+
+.marque-box .marque-main ul li .splendid-links {
+    line-height: 18px;
+    color: #999;
+    margin: 10px 0 9px 0;
+    font-size: 14px;
+    white-space: nowrap;
+    word-break: keep-all;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 200px;
+    text-align: center;
+}
+
+/*滚动图片样式*/

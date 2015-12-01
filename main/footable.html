@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap Template - Tips</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/footable.core.min.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="" >
+      <h3>Footable 的搭建结构</h3>
+
+
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th data-toggle="true"> <!-- 加有data-toggle的列，则在页面变窄后在此列上加上展开标识按钮 -->
+              First Name
+            </th>
+            <th>
+              Last Name
+            </th>
+            <th data-hide="phone,tablet"><!-- 加有data-hide的列，则在页面不同宽度时隐藏该列到展开栏中 -->
+              Job Title
+            </th>
+            <th data-hide="phone,tablet"> <!-- data-hide 中的值为js初始化时定义的 breakpoints 类型 -->
+              DOB
+            </th>
+            <th data-hide="phone">
+              Status
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Isidra</td>
+            <td>Boudreaux</td>
+            <td>Traffic Court Referee</td>
+            <td>22 Jun 1972</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Shona</td>
+            <td>Woldt</td>
+            <td>Airline Transport Pilot</td>
+            <td>3 Oct 1981</td>
+            <td>Disabled</td>
+          </tr>
+          <tr>
+            <td>Granville</td>
+            <td>Leonardo</td>
+            <td>Business Services Sales Representative</td>
+            <td>19 Apr 1969</td>
+            <td>Suspended</td>
+          </tr>
+          <tr>
+            <td>Easer</td>
+            <td>Dragoo</td>
+            <td>Drywall Stripper</td>
+            <td>13 Dec 1977</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Maple</td>
+            <td>Halladay</td>
+            <td>Aviation Tactical Readiness Officer</td>
+            <td>30 Dec 1991</td>
+            <td>Suspended</td>
+          </tr>
+          <tr>
+            <td>Maxine</td>
+            <td>Woldt</td>
+            <td>Business Services Sales Representative</td>
+            <td>17 Oct 1987</td>
+            <td>Disabled</td>
+          </tr>
+          <tr>
+            <td>Lorraine</td>
+            <td>Mcgaughy</td>
+            <td>Hemodialysis Technician</td>
+            <td>11 Nov 1983</td>
+            <td>Disabled</td>
+          </tr>
+          <tr>
+            <td>Lizzee</td>
+            <td>Goodlow</td>
+            <td>Technical Services Librarian</td>
+            <td>1 Nov 1961</td>
+            <td>Suspended</td>
+          </tr>
+          <tr>
+            <td>Judi</td>
+            <td>Badgett</td>
+            <td>Electrical Lineworker</td>
+            <td>23 Jun 1981</td>
+            <td>Active</td>
+          </tr>
+          <tr>
+            <td>Lauri</td>
+            <td>Hyland</td>
+            <td>Blackjack Supervisor</td>
+            <td>15 Nov 1985</td>
+            <td>Suspended</td>
+          </tr>
+        </tbody>
+      </table>
+
+
+      
+    </div> 
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://fooplugins.com/footable-demos/" target="_blank">官方中文介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../resource/js/footable.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('table').footable({
+          breakpoints: {  //该属性为设置页面宽度切换点，phone、tablet两个为默认值，不设置该参数则默认下面两个属性
+            phone: 480,
+            tablet: 1024
+          }
+        });
+      });
+    </script>
+</body>
+</html>

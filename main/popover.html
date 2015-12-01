@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Bootstrap Template - Popover</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="container">
+      <h3>Popover 的使用方法</h3>
+
+
+      <a href="#" class="btn" data-toggle="popover" title="" 
+      data-html="true" 
+      data-content="这里填入弹出提示框的主要内容。<a href='#'>这是一个连接</a>" 
+      data-original-title="提示标题">点击查看弹出提示</a>
+
+      <table class="table table-bordered table-striped"  style="margin-top:10px">
+          <thead>
+           <tr>
+             <th style="width: 100px;">名称</th>
+             <th style="width: 100px;">类型</th>
+             <th style="width: 50px;">默认值</th>
+             <th>描述</th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+             <td>animation</td>
+             <td>boolean</td>
+             <td>true</td>
+             <td>在显示和隐藏提示框的时候是否使用动画过渡效果</td>
+           </tr>
+           <tr>
+             <td>html</td>
+             <td>boolean</td>
+             <td>false</td>
+             <td>在提示框内是是否以<code>html</code>形式注入数据。如果值为 false, 将会以 <code>text</code> 的形式将内容注入数据，使用<code>text</code>方式可以有效的防止XSS攻击。</td>
+           </tr>
+           <tr>
+             <td>placement</td>
+             <td>string | function</td>
+             <td>'right'</td>
+             <td>popover 的显示方位 - top | bottom | left | right</td>
+           </tr>
+           <tr>
+             <td>selector</td>
+             <td>string</td>
+             <td>false</td>
+             <td>如果提供了selector，将对符合条件的某个或多个元素启用工具提示。</td>
+           </tr>
+           <tr>
+             <td>trigger</td>
+             <td>string</td>
+             <td>'click'</td>
+             <td>popover 的触发方式 - click | hover | focus | manual</td>
+           </tr>
+           <tr>
+             <td>title</td>
+             <td>string | function</td>
+             <td>''</td>
+             <td>当 `title` 属性未设定时所显示的默认值</td>
+           </tr>
+           <tr>
+             <td>content</td>
+             <td>string | function</td>
+             <td>''</td>
+             <td>当 `data-content` 属性未设定时所显示的默认值</td>
+           </tr>
+           <tr>
+             <td>delay</td>
+             <td>number | object</td>
+             <td>0</td>
+             <td>
+              <p>延迟显示和隐藏 popover (ms) - 不支持以manual为触发方式的 popover</p>
+              <p>如果只设定一个数值, 延迟将同时定义给 show/hide</p>
+              <p>用对象的定义方法如: <code>delay: { show: 500, hide: 100 }</code></p>
+             </td>
+           </tr>
+           <tr>
+             <td>container</td>
+             <td>string | false</td>
+             <td>false</td>
+             <td>
+              <p>将 popover 添加到一个特定的容器中，定义方法如： <code>container: 'body'</code></p>
+             </td>
+           </tr>
+          </tbody>
+        </table>
+    </div>  
+
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://v2.bootcss.com/javascript.html#popovers" target="_blank">官方中文介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        //统一初始化页面上的所有popover，通用设置可在初始化时把参数也初始化进去，单独特例可在标签中以data的形式进行设置
+        $('[data-toggle="popover"]').popover();
+      });
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Plugin Template - PDFViewer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet" media="screen">
+    <link href="../resource/flexpaper/css/flexpaper.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="container" >
+      <h3>PDFViewer 的搭建结构</h3>
+
+      <p>本插件在file：//打开方式下无法显示效果，请发不到服务器中进行效果预览</p>
+
+      <p>实际项目允许中需要先用代码将pdf文件转换为swf文件才可以在线预览，转换工具为pdf2swf</p>
+
+      <div id="documentViewer" class="flexpaper_viewer" style="width:770px;height:500px"></div>
+
+    </div> 
+
+    <blockquote role="remark" style="margin:10px">
+      <p>
+        详细使用方法请查看源码。
+        <a href="http://flexpaper.devaldi.com/parameters.jsp" target="_blank">官方参数介绍</a>
+        <a href="http://flexpaper.devaldi.com/api.jsp" target="_blank">官方API介绍</a>
+     </p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../resource/flexpaper/js/flexpaper.js"></script>
+    <script src="../resource/flexpaper/js/flexpaper_handlers.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#documentViewer').FlexPaperViewer(
+        { config : {
+
+            SWFFile : '../resource/flexpaper/docs/Paper.pdf.swf',
+            jsDirectory : '../resource/flexpaper/js/', 
+
+            Scale : 0.6,                      //每初始化时的缩放步长，取值范围0-1
+            ZoomTransition : 'easeOut',       //easenone, easeout, linear, easeoutquad
+            ZoomTime : 0.5,                   //缩放动画持续时间
+            ZoomInterval : 0.2,               //缩放动作步长
+            FitPageOnLoad : true,             //加载时是否适应所放到每页只显示一页内容
+            FitWidthOnLoad : false,           //加载时是否将每页内容适应容器宽度
+            FullScreenAsMaxWindow : false,    //全屏显示时是否只在浏览器窗口中最大化显示
+            ProgressiveLoading : false,       //是否边加载文件边显示内容
+            MinZoomSize : 0.2,                //最小缩放比例20%
+            MaxZoomSize : 5,                  //最大缩放比例500%
+            SearchMatchAll : false,           //搜索的时候是否将文中所有匹配项都处于选中状态
+            InitViewMode : 'Portrait',        //初始化的时候是单页显示还是双页显示。"Portrait" or "TwoPage"
+            StartAtPage : '',                 //初始化时从第几页开始
+
+            ViewModeToolsVisible : true,      //是否显示浏览模式工具栏
+            ZoomToolsVisible : true,          //是否显示缩放工具栏
+            NavToolsVisible : true,           //是否显示页面导航工具栏
+            CursorToolsVisible : true,        //是否显示手势工具栏
+            SearchToolsVisible : true,        //是否显示搜索工具栏
+            
+            localeChain: 'zh_CN'
+        }});
+      });
+    </script>
+</body>
+</html>

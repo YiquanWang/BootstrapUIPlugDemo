@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Baidu Map</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="container">
+      <h3>百度地图的使用方法</h3>
+
+        <!-- 存放地图内容容器，需要预设容器大小 -->
+        <div id="map-box" style="width:800px;height:600px"></div>
+
+        <div  style="margin:10px">
+          x: <input type="text" id="mapx"/>
+          y: <input type="text" id="mapy"/>
+
+             <input type="button" class="btn" id="pointset" value="切换至"/>
+        </div>
+     
+    </div>
+
+    <blockquote role="remark" style="margin:10px">
+      <p>基本使用方法请查看源码。 <a href="http://developer.baidu.com/map/jsdemo.htm" target="_blank">官方更多demo样例详解</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=DkwYUUMd5vCSGIkbhfyp4Gb3"></script> 
+    <!-- 此处的ak参数设置您的项目在百度开发者中心中中建立应用时生成的key，此应用创建免费，部分功能每个key每天有10万访问流量限制 -->
+    <script type="text/javascript">
+      // 百度地图API功能
+      var map = new BMap.Map("map-box");                // 创建Map实例
+      var point = new BMap.Point(114.179,22.569484);    // 创建点坐标
+      map.centerAndZoom(point,17);                      // 初始化地图,设置中心点坐标和地图级别。
+
+      map.enableScrollWheelZoom(); //允许滚轮缩放功能
+
+      //添加控件
+      map.addControl(new BMap.NavigationControl());     //添加平移缩放工具栏
+      map.addControl(new BMap.ScaleControl());          //添加缩放比例尺
+      map.addControl(new BMap.MapTypeControl());        //添加地图类型选择栏（地图、卫星、三维）
+      map.addControl(new BMap.OverviewMapControl());    //右下角可折叠缩略图
+
+      // 添加点击地图内容时获取点击点的经纬度坐标
+      map.addEventListener("click",function(e){
+        $("#mapx").val(e.point.lng);
+        $("#mapy").val(e.point.lat);
+      });
+
+      //添加全景地图控件
+      //map.addTileLayer(new BMap.PanoramaCoverageLayer());
+      var stCtrl = new BMap.PanoramaControl();  
+      stCtrl.setOffset(new BMap.Size(10, 40));  
+      map.addControl(stCtrl);
+
+      /*     在地图上添加标注   start   */
+      var marker1 = new BMap.Marker(point);  // 创建标注
+      map.addOverlay(marker1);              // 将标注添加到地图中
+
+      //创建信息窗口
+      var infoWindow1 = new BMap.InfoWindow("<p style='font-size:14px; margin:10px 0;'>深圳市残友软件有限公司</p><p style='font-size:14px;'> <a href='http://www.canyousoftware.com' target='_blank'>官网地址</a></p>");
+      marker1.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
+
+      /*     在地图上添加标注   end    */
+
+      $(function(){
+        $("#pointset").click(function(){
+          var mappoint =  new BMap.Point($("#mapx").val(),$("#mapy").val()); 
+          console.log(mappoint);
+          map.panTo(mappoint);
+        })
+      })
+
+    </script>
+</body>
+</html>

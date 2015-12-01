@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <title>Plugin Template - Lazy load</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="../resource/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <link href="../resource/css/global.css" rel="stylesheet" media="screen">
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://cdn.bootcss.com/html5shiv/3.7.0/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>    
+    <div role="showbox" style="margin:10px" class="container" >
+      <h3>Lazy load 的使用方法</h3>
+
+
+      <div>
+        <!-- 用data-original来代替原有的src属性，使得图片在页面加载时图片显示为空白图片，注意要预设图片的宽高进行占位 -->
+        <img class="lazy" data-original="../resource/img/1_b.jpg" width="600" height="600"><br/> <br/> 
+        <img class="lazy" data-original="../resource/img/2_b.jpg" width="600" height="600"><br/> <br/> 
+        <img class="lazy" data-original="../resource/img/3_b.jpg" width="600" height="600"><br/> <br/> 
+        <img class="lazy" data-original="../resource/img/4_b.jpg" width="600" height="600"><br/> <br/> 
+        <img class="lazy" data-original="../resource/img/5_b.jpg" width="600" height="600"><br/> <br/> 
+      </div>
+
+      
+    </div> 
+
+    <blockquote role="remark" style="margin:10px">
+      <p>详细使用方法请查看源码。 <a href="http://www.appelsiini.net/projects/lazyload" target="_blank">官方中文介绍</a></p>
+    </blockquote>
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="../resource/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../resource/lazyload/jquery.lazyload.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        // 初始化lazyload插件
+        $("img.lazy").lazyload({
+          effect : "fadeIn"
+        });
+
+          //可以在初始化的时候设置 placeholder 选项，设置图片未加载时默认图片
+      });
+    </script>
+</body>
+</html>
